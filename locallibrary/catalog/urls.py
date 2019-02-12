@@ -14,6 +14,10 @@ urlpatterns += [
     path('borrowed/', views.LoanedBooksListView.as_view(), name='all-borrowed'),
 ]
 
+urlpatterns += [   
+    path('book/<uuid:pk>/renew/', views.renew_book_librarian, name='renew-book-librarian'),
+]
+
 # New lines below to serve static files in debug mode
 import os
 from django.urls import re_path
